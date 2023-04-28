@@ -27,11 +27,11 @@ public:
 	Fraction& operator+=(const Fraction& other);
 	Fraction& operator-=(const Fraction& other);
 	
-	// префикс
+	// РїСЂРµС„РёРєСЃ
 	Fraction& operator++();
 	Fraction& operator--();
 
-	// постфикс
+	// РїРѕСЃС‚С„РёРєСЃ
 	Fraction operator++(int);
 	Fraction operator--(int);
 
