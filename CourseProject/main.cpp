@@ -56,7 +56,7 @@ int main()
 	res.display();
 
 	res = f1 / f2;
-	cout << "×Частное дробей = ";
+	cout << "Частное дробей = ";
 	res.display();
 
 	res = f1 * f2;
