@@ -168,6 +168,23 @@ Fraction operator*(const Fraction& fraction_1, const Fraction& fraction_2)
 	return result;
 }
 
+Fraction operator*(const Fraction& fraction_1, const int number)
+{
+	Fraction result;
+	Fraction fraction_2(number, 1);
+	result.numerator = fraction_1.numerator * fraction_2.numerator;
+	result.denominator = fraction_1.denominator * fraction_2.denominator;
+	return result;
+}
+Fraction operator*(const int number, const Fraction& fraction_1)
+{
+	Fraction result;
+	Fraction fraction_2(number, 1);
+	result.numerator = fraction_1.numerator * fraction_2.numerator;
+	result.denominator = fraction_1.denominator * fraction_2.denominator;
+	return result;
+}
+
 Fraction operator/(const Fraction& fraction_1, const Fraction& fraction_2)
 {
 	Fraction result;
