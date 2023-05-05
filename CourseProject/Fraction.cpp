@@ -101,9 +101,57 @@ Fraction operator+(const Fraction& fraction_1, const Fraction& fraction_2)
 	return result;
 }
 
+Fraction operator+(const Fraction& fraction_1, const int number)
+{
+	Fraction result;
+	Fraction fraction_2(number, 1);
+	int common_denominator = lcm(fraction_1.denominator, fraction_2.denominator);
+
+	result.numerator = fraction_1.numerator * (common_denominator / fraction_1.denominator) +
+		fraction_2.numerator * (common_denominator / fraction_2.denominator);
+	result.denominator = common_denominator;
+	return result;
+}
+
+Fraction operator+(const int number, const Fraction& fraction_1)
+{
+	Fraction result;
+	Fraction fraction_2(number, 1);
+	int common_denominator = lcm(fraction_1.denominator, fraction_2.denominator);
+
+	result.numerator = fraction_1.numerator * (common_denominator / fraction_1.denominator) +
+		fraction_2.numerator * (common_denominator / fraction_2.denominator);
+	result.denominator = common_denominator;
+	return result;
+}
+
 Fraction operator-(const Fraction& fraction_1, const Fraction& fraction_2)
 {
 	Fraction result;
+	int common_denominator = lcm(fraction_1.denominator, fraction_2.denominator);
+
+	result.numerator = fraction_1.numerator * (common_denominator / fraction_1.denominator) -
+		fraction_2.numerator * (common_denominator / fraction_2.denominator);
+	result.denominator = common_denominator;
+	return result;
+}
+
+Fraction operator-(const Fraction& fraction_1, const int number)
+{
+	Fraction result;
+	Fraction fraction_2(number, 1);
+	int common_denominator = lcm(fraction_1.denominator, fraction_2.denominator);
+
+	result.numerator = fraction_1.numerator * (common_denominator / fraction_1.denominator) -
+		fraction_2.numerator * (common_denominator / fraction_2.denominator);
+	result.denominator = common_denominator;
+	return result;
+}
+
+Fraction operator-(const int number, const Fraction& fraction_1)
+{
+	Fraction result;
+	Fraction fraction_2(number, 1);
 	int common_denominator = lcm(fraction_1.denominator, fraction_2.denominator);
 
 	result.numerator = fraction_1.numerator * (common_denominator / fraction_1.denominator) -
@@ -125,6 +173,24 @@ Fraction operator/(const Fraction& fraction_1, const Fraction& fraction_2)
 	Fraction result;
 	result.numerator = fraction_1.numerator * fraction_2.denominator;
 	result.denominator = fraction_1.denominator * fraction_2.numerator;
+	return result;
+}
+
+Fraction operator/(const Fraction& fraction_1, const int number)
+{
+	Fraction result;
+	Fraction fraction_2(number, 1);
+	result.numerator = fraction_1.numerator * fraction_2.denominator;
+	result.denominator = fraction_1.denominator * fraction_2.numerator;
+	return result;
+}
+
+Fraction operator/(const int number, const Fraction& fraction_1)
+{
+	Fraction result;
+	Fraction fraction_2(number, 1);
+	result.numerator = fraction_2.numerator * fraction_1.denominator;
+	result.denominator = fraction_2.denominator * fraction_1.numerator;
 	return result;
 }
 

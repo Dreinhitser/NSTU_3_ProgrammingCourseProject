@@ -36,9 +36,20 @@ public:
 	Fraction operator--(int);
 
 	friend Fraction operator+(const Fraction& fraction_1, const Fraction& fraction_2);
+	friend Fraction operator+(const Fraction& fraction_1, const int number);
+	friend Fraction operator+(const int number, const Fraction& fraction_1);
+
 	friend Fraction operator-(const Fraction& fraction_1, const Fraction& fraction_2);
+	friend Fraction operator-(const Fraction& fraction_1, const int number);
+	friend Fraction operator-(const int number, const Fraction& fraction_1);
+
 	friend Fraction operator*(const Fraction& fraction_1, const Fraction& fraction_2);
+	friend Fraction operator*(const Fraction& fraction_1, const int number);
+	friend Fraction operator*(const int number, const Fraction& fraction_1);
+
 	friend Fraction operator/(const Fraction& fraction_1, const Fraction& fraction_2);
+	friend Fraction operator/(const Fraction& fraction_1, const int number);
+	friend Fraction operator/(const int number, const Fraction& fraction_1);
 
 	friend bool operator>(const Fraction& fraction_1, const Fraction& fraction_2);
 	friend bool operator>=(const Fraction& fraction_1, const Fraction& fraction_2);
